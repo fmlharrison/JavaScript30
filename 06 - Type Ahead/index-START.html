@@ -52,6 +52,23 @@
       suggestions.innerHTML = html;
     }
 
+    /* Woring on sorting results by location.
+    const myPosition = {}
+
+    function findPosition() {
+      myPosition.push(...{ lat: navigator.geolocation.getCurrentPosition(myLat), long: navigator.geolocation.getCurrentPosition(myLong) });
+    }
+
+    function myLat(position) {
+      return position.coords.latitude;
+      console.log(position.coords.latitude);
+    }
+
+    function myLong(position) {
+      return position.coords.longitude;
+    }
+    */
+
     const searchInput = document.querySelector('.search');
     const suggestions = document.querySelector('.suggestions');
 
