@@ -6,11 +6,12 @@ const saturation = document.querySelector('#saturation');
 const lightness = document.querySelector('#lightness');
 const lineWidth = document.querySelector('#width');
 const clear = document.querySelector('#clear');
+const download = document.querySelector('#download');
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1000;
+canvas.height = 800;
 ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
@@ -53,6 +54,11 @@ function clearCanvas(e) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function downloadCanvas(link, filename) {
+  link.href = canvas.toDataURL();
+  link.download = filename;
+}
+
 canvas.addEventListener('mousedown', (e) => {
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY];
@@ -73,3 +79,7 @@ lineWidth.addEventListener('click', changeWidth);
 lineWidth.addEventListener('change', changeWidth);
 
 clear.addEventListener('click', clearCanvas);
+
+download.addEventListener('click', function() {
+  downloadCanvas(this, "canvasMe.png");
+});

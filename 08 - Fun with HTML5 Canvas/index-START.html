@@ -22,10 +22,11 @@
     <canvas id="line-prev" width="200" height="10"></canvas>
 
     <button id="clear" type="button" name="clear">Clear</button>
+    <a id="download" >Save Image</a>
 
   </div>
 
-  <canvas id="draw" width="800" height="800"></canvas>
+  <canvas id="draw" width="1000" height="800"></canvas>
 
   <script src="./src/draw.js"></script>
 
@@ -42,6 +43,10 @@
     margin:0;
   }
 
+  .color-controls {
+    margin-bottom: 30px;
+  }
+
   #color-box {
     background-color: hsl(var(--hue), var(--saturation), var(--lightness));
   }
@@ -51,6 +56,20 @@
     min-width: 200px;
     max-width: 200px;
     height: var(--line-width);
+  }
+
+  #draw {
+    border: 1px solid black;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #download {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    color: initial;
   }
 
 </style>
