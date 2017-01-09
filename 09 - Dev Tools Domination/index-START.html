@@ -18,29 +18,49 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log(`hello I am ${code_block}`);
 
     // Styled
+    console.log('%c I am some great text', 'font-size:50px;');
 
     // warning!
+    console.warn('This is a warming and show you the stack track');
 
     // Error :|
+    console.error('Shows an error in the console and gives you the stack trace');
 
     // Info
+    console.info('This gives you an info throw');
 
     // Testing
+    console.assert({block of code}, "Error message if the block has returned false");
 
     // clearing
+    console.clear(); //clears console.
 
     // Viewing DOM Elements
+    console.log(p); //this gets the variable
+    console.dir(p); // This returns the object in the console so you can open it up as see all the information about it.
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`);
+      console.log(`This is ${dog.name}.`); // logs the name of eahc of the dogs in the array.
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`); //console.group bookends any logs you want to do and groups them by something. In this case it is the dog's name.
+    })
 
     // counting
+    console.count('tells you how many time you have done something');
 
     // timing
-
+    console.time('name of the thing you are doing')
+    // run the code you want to find out how fast it's going.
+    console.timeEnd('name of the thing you are doing')
   </script>
 </body>
 </html>
